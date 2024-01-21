@@ -7,8 +7,14 @@ export default function Navbar() {
         <img src="/src/img/StudyGoNav.png" alt="StudyGo"></img>
       </Link>
       <ul>
+        <CustomLink to="/studyplan/studyplan" className="site-studyplan">
+          Lernplan
+        </CustomLink>
         <CustomLink to="/todos/todos" className="site-todo">
           Todos
+        </CustomLink>
+        <CustomLink to="/flashcards" className="site-flashcards">
+          Flash-Cards
         </CustomLink>
         <CustomLink to="/user">User</CustomLink>
       </ul>

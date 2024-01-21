@@ -5,6 +5,8 @@ import User from "./pages/users/User";
 import { Route, Routes } from "react-router-dom";
 import Register from "./pages/users/Register";
 import Todos from "./pages/todos/Todos";
+import Studyplan from "./pages/studyplan/Studyplan";
+import Flashcards from "./pages/flashcards/Flashcards";
 
 function App() {
   let token = sessionStorage.getItem("token");
@@ -16,7 +18,9 @@ function App() {
         <div className="container">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/studyplan/studyplan" element={<Studyplan />} />
             <Route path="/todos/todos" element={<Todos />} />
+            <Route path="/flashcards" element={<Flashcards />} />
             <Route path="/user" element={<User />} />
           </Routes>
         </div>

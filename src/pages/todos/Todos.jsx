@@ -1,4 +1,4 @@
-import { Box, Grid } from "@mui/material";
+import { Grid } from "@mui/material";
 import TodoRegister from "./todo-register/TodoRegister";
 import TodoPage from "./todo-list/TodoPage";
 import { useState } from "react";
