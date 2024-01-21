@@ -3,6 +3,13 @@
 }
 
 body {
+  display: grid;
+  /* grid-template-areas:
+  "h h"
+  "n m"
+  "f f";
+  grid-template-rows: auto;
+  grid-template-columns: minmax(192px, 600px) auto; */
   margin: 0 auto;
   background-color: #333;
   color: hsl(200, 100%, 90%);
@@ -14,6 +21,7 @@ body {
 }
 
 .nav {
+  /* grid-area: h h; */
   background-color: #252424;
   color: white;
   display: flex;
@@ -27,7 +35,7 @@ body {
   font-size: 2rem;
 }
 
-.site-todo {
+.site-todo { //TODO this is not working
   max-width: 400px;
   padding: 1rem;
   margin: 0 auto;

@@ -7,7 +7,7 @@ export default function Navbar() {
         <img src="/src/img/StudyGoNav.png" alt="StudyGo"></img>
       </Link>
       <ul>
-        <CustomLink to="/todos/todopage" className="site-todo">
+        <CustomLink to="/todos/todos" className="site-todo">
           Todos
         </CustomLink>
         <CustomLink to="/user">User</CustomLink>
