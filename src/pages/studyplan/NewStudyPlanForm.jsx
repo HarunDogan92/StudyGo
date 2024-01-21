@@ -18,7 +18,7 @@ export function NewStudyPlanForm({ onSubmit }) {
   return (
     <form onSubmit={handleSubmit} className="new-study-form">
       <div className="form-row">
-        <label htmlFor="item">New Study Plan</label>
+        <label htmlFor="item">Neuer Lernplan</label>
         <input
           value={newItem}
           onChange={(e) => setNewItem(e.target.value)}
@@ -49,7 +49,7 @@ export function NewStudyPlanForm({ onSubmit }) {
           dateFormat="dd/MM/yyyy"
         />
       </div>
-      <button className="btn">Add</button>
+      <button className="btn">Hinzufügen</button>
     </form>
   );
 }

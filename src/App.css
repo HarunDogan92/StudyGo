@@ -24,6 +24,7 @@
   border-radius: 0.25em;
   cursor: pointer;
   outline: none;
+  margin: 5px;
 }
 
 .btn:hover,

@@ -68,13 +68,13 @@ export default function TodoRegister() {
 
   return (
     <>
-      <h1 className="header">Todo Lists</h1>
+      <h1 className="header">Todo Listen</h1>
       <Stack
         sx={{ border: "1px solid" }}
         spacing={2}
         divider={<Divider orientation="vertical" flexItem />}
       >
-        {todolist.length === 0 && "No Todo Lists"}
+        {todolist.length === 0 && "Keine Todo Listen"}
         {todolist.map((todo) => {
           return (
             <TodoListItem

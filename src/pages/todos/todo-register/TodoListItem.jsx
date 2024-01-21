@@ -3,10 +3,10 @@ export function TodoListItem({ id, name, selectTodoList, deleteTodoList }) {
     <div>
       <label>{name}</label>
       <button onClick={() => selectTodoList(id)} className="btn btn-dange">
-        Select
+        Selektieren
       </button>
       <button onClick={() => deleteTodoList(id)} className="btn btn-dange">
-        Delete
+        Löschen
       </button>
     </div>
   );

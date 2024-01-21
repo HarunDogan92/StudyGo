@@ -43,6 +43,29 @@ export default function StudyplanCalender() {
       });
   });
 
+  function createTodoLists() {
+    axios
+      .post(
+        "http://localhost:8080/user/" +
+          sessionStorage.getItem("userId") +
+          "/toDoList/" +
+          currentDate.getMonth() +
+          1,
+        null,
+        {
+          headers: {
+            Authorization: "Bearer " + sessionStorage.getItem("token"),
+          },
+        }
+      )
+      .then((res) => {
+        console.log("success", res);
+      })
+      .catch((error) => {
+        console.error("Error fetching data: ", error);
+      });
+  }
+
   const getColorForDay = (date) => {
     const plan = studyplan.find((plan) => {
       const from = new Date(plan.fromDate);
@@ -83,7 +106,7 @@ export default function StudyplanCalender() {
       <Grid container spacing={2}>
         <Grid item xs={1}>
           <button className="btn" onClick={() => prevMonth()}>
-            Prev
+            Zurück
           </button>
         </Grid>
         <Grid item xs={10}>
@@ -93,7 +116,7 @@ export default function StudyplanCalender() {
         </Grid>
         <Grid item xs={1}>
           <button className="btn" onClick={() => nextMonth()}>
-            Next
+            Vorwärts
           </button>
         </Grid>
       </Grid>
@@ -121,6 +144,9 @@ export default function StudyplanCalender() {
           );
         })}
       </div>
+      <button className="btn" onClick={() => createTodoLists()}>
+        Erstelle TodoListen vom Lernplan
+      </button>
     </div>
   );
 }

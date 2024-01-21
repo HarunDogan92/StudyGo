@@ -5,7 +5,7 @@ export function StudyplanItem({ id, name, deleteStudyplan, color }) {
         {name}
       </label>
       <button onClick={() => deleteStudyplan(id)} className="btn btn-dange">
-        Delete
+        Löschen
       </button>
     </div>
   );
