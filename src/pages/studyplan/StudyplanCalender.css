@@ -1,0 +1,32 @@
+.container {
+  margin-top: 10;
+}
+
+.calender {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 40px;
+}
+
+.weekdays {
+  font-weight: bold;
+  text-align: center;
+}
+
+.calenderDays {
+  border: solid;
+  border-radius: 30px;
+  border-spacing: 5px;
+}
+
+
+.highlightedDay {
+  border: solid;
+  border-radius: 30px;
+  border-spacing: 5px;
+  color: rgb(36, 34, 34);
+}
+
+.highlightedText {
+  color: rgb(36, 34, 34);
+}
