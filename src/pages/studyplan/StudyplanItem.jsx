@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export function StudyplanItem({ id, name, deleteStudyplan, color }) {
   return (
     <div>
@@ -7,6 +9,13 @@ export function StudyplanItem({ id, name, deleteStudyplan, color }) {
       <button onClick={() => deleteStudyplan(id)} className="btn btn-dange">
         Löschen
       </button>
+      <Link
+        to={"/studyplan/studyplanedit/" + id}
+        state={{ name: name }}
+        className="btn"
+      >
+        Bearbeiten
+      </Link>
     </div>
   );
 }

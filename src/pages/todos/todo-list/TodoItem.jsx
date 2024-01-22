@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export function TodoItem({ done, id, name, toggleTodo, deleteTodo }) {
   return (
     <li>
@@ -12,6 +14,9 @@ export function TodoItem({ done, id, name, toggleTodo, deleteTodo }) {
       <button onClick={() => deleteTodo(id)} className="btn btn-dange">
         Löschen
       </button>
+      <Link to={"/todos/todoedit/" + id} state={{ name: name }} className="btn">
+        Bearbeiten
+      </Link>
     </li>
   );
 }
