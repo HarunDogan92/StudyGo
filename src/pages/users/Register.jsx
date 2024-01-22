@@ -5,6 +5,7 @@ export default function Register() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [action, setAction] = useState("");
+  const [message, setMessage] = useState("");
 
   function submit(e) {
     if (action === "Login") {
@@ -16,14 +17,24 @@ export default function Register() {
 
   function submitRegister(e) {
     e.preventDefault();
-    axios
-      .post("http://localhost:8080/api/auth/register", {
-        username: username,
-        password: password,
-      })
-      .then((res) => {
-        submitLogin(e);
-      });
+    const regExp = new RegExp("(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])");
+    if (password === "") {
+      setMessage("Bitte Passwort ausfüllen");
+    } else if (!regExp.test(password)) {
+      console.log(password);
+      setMessage(
+        "Passwort muss mindestens einen Großbuchstaben, Kleinbuchstaben und eine Zahl enthalten"
+      );
+    } else {
+      axios
+        .post("http://localhost:8080/api/auth/register", {
+          username: username,
+          password: password,
+        })
+        .then((res) => {
+          submitLogin(e);
+        });
+    }
   }
 
   function submitLogin(e) {
@@ -43,8 +54,14 @@ export default function Register() {
   return (
     <>
       <form className="login-form" onSubmit={(e) => submit(e)}>
+        <img
+          src="/src/img/StudyGoLogoEmptySmall.png"
+          alt="StudyGo"
+          width="30%"
+          height="30%"
+        ></img>
         <h1 htmlFor="item" className="login-header">
-          Login/Create your Account
+          Login / Registrieren
         </h1>
         <div className="login-form-row">
           <label htmlFor="item">Username</label>
@@ -56,7 +73,7 @@ export default function Register() {
             type="text"
             id="username"
           ></input>
-          <label htmlFor="item">Password</label>
+          <label htmlFor="item">Passwort</label>
           <input
             onChange={(e) => setPassword(e.target.value)}
             value={password}
@@ -65,6 +82,7 @@ export default function Register() {
             type="password"
             id="password"
           ></input>
+          <p>{message}</p>
         </div>
         <div className="login-btn-container">
           <button
@@ -81,7 +99,7 @@ export default function Register() {
               setAction("Register");
             }}
           >
-            Register
+            Registrieren
           </button>
         </div>
       </form>
