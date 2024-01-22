@@ -65,3 +65,67 @@ body {
 .nav li:hover {
   background-color: #777;
 }
+
+.login-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 200px;
+  width: 600;
+  padding-bottom: 30px;
+}
+
+.login-form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  align-items: center;
+  margin: auto;
+  width: 480px;
+  height: 80px;
+}
+
+.login-btn-container {
+  display: flex;
+  gap: 30px;
+  margin: 60px auto;
+}
+
+.btn-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 220px;
+  height: 59px;
+  background: hsl(200, 100%, 50%, 0.1);
+  border: 1px solid hsl(200, 100%, 50%);
+  color: hsl(200, 100%, 50%);
+  border-radius: 0.25em;
+  cursor: pointer;
+  outline: none;
+}
+
+.btn-login:hover,
+.btn-login:focus-visible {
+  background: hsl(200, 100%, 50%, 0.2);
+}
+
+.btn-login.btn-danger {
+  background: hsl(0, 100%, 40%, 0.1);
+  border: 1px solid hsl(0, 100%, 40%);
+  color: hsl(0, 100%, 40%);
+}
+
+.btn-login.btn-danger:hover,
+.btn-login.btn-danger:focus-visible {
+  background: hsl(0, 100%, 40%, 0.2);
+}

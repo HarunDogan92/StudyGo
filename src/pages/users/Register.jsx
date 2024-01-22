@@ -43,8 +43,10 @@ export default function Register() {
   return (
     <>
       <form className="login-form" onSubmit={(e) => submit(e)}>
-        <h1 htmlFor="item">Login/Create your Account</h1>
-        <div className="form-row">
+        <h1 htmlFor="item" className="login-header">
+          Login/Create your Account
+        </h1>
+        <div className="login-form-row">
           <label htmlFor="item">Username</label>
           <input
             onChange={(e) => setUsername(e.target.value)}
@@ -60,26 +62,28 @@ export default function Register() {
             value={password}
             placeholder="Password"
             required
-            type="text"
+            type="password"
             id="password"
           ></input>
         </div>
-        <button
-          className="btn"
-          onClick={() => {
-            setAction("Login");
-          }}
-        >
-          Login
-        </button>
-        <button
-          className="btn"
-          onClick={() => {
-            setAction("Register");
-          }}
-        >
-          Register
-        </button>
+        <div className="login-btn-container">
+          <button
+            className="btn-login"
+            onClick={() => {
+              setAction("Login");
+            }}
+          >
+            Login
+          </button>
+          <button
+            className="btn-login"
+            onClick={() => {
+              setAction("Register");
+            }}
+          >
+            Register
+          </button>
+        </div>
       </form>
     </>
   );
