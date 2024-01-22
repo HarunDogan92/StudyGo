@@ -21,7 +21,6 @@ export default function Register() {
     if (password === "") {
       setMessage("Bitte Passwort ausfüllen");
     } else if (!regExp.test(password)) {
-      console.log(password);
       setMessage(
         "Passwort muss mindestens einen Großbuchstaben, Kleinbuchstaben und eine Zahl enthalten"
       );
