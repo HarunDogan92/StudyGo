@@ -45,13 +45,13 @@ export default function StudyplanCalender() {
   });
 
   function createTodoLists() {
+    const month = currentDate.getMonth() + 1;
     axios
       .post(
         "http://localhost:8080/user/" +
           sessionStorage.getItem("userId") +
           "/toDoList/" +
-          currentDate.getMonth() +
-          1,
+          month,
         null,
         {
           headers: {
