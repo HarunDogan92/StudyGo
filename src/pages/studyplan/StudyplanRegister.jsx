@@ -3,6 +3,7 @@ import { NewStudyPlanForm } from "./NewStudyPlanForm";
 import { StudyplanItem } from "./StudyplanItem";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { addHours } from "date-fns";
 
 export default function StudyplanRegister() {
   const [studyplan, setStudyplan] = useState([]);
@@ -33,6 +34,8 @@ export default function StudyplanRegister() {
   });
 
   function addStudyPlan(title, fromDate, toDate) {
+    fromDate = addHours(fromDate, 1);
+    toDate = addHours(toDate, 1);
     axios
       .post(
         "http://localhost:8080/user/" +

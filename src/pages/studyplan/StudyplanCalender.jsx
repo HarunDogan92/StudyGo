@@ -6,6 +6,7 @@ import {
   format,
   getISODay,
   startOfMonth,
+  subHours,
 } from "date-fns";
 import { useEffect, useState } from "react";
 import { Grid } from "@mui/material";
@@ -68,7 +69,7 @@ export default function StudyplanCalender() {
 
   const getColorForDay = (date) => {
     const plan = studyplan.find((plan) => {
-      const from = new Date(plan.fromDate);
+      const from = subHours(new Date(plan.fromDate), 1);
       const to = new Date(plan.toDate);
       return date >= from && date <= to;
     });
@@ -133,6 +134,7 @@ export default function StudyplanCalender() {
         })}
         {daysInMonth.map((day, index) => {
           const color = getColorForDay(day);
+
           return (
             <div
               key={index}
